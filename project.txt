@@ -1,0 +1,2 @@
+GitHub Repository URL: https://github.com/lgustavoreis/midterm-tt4-project.git
+Docker Hub Repository URL: https://hub.docker.com/repository/docker/lgustavoreis/midterm-tt4-project
