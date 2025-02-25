@@ -7,8 +7,10 @@ module.exports = {
   entry: {
     global: path.resolve(__dirname, "global.js"),
     index: path.resolve(__dirname, "index.js"),
-    // listProducts: "./list-products.js",
-    // addProducts: "./add-products.js",
+    global: path.resolve(__dirname, "global.js"),
+  index: path.resolve(__dirname, "index.js"),
+  listProducts: path.resolve(__dirname, "list-products.js"),
+  //addProducts: path.resolve(__dirname, "add-products.js"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -44,9 +46,9 @@ module.exports = {
       },
       {
         test: /\.(woff(2)?|eot|ttf)$/,
-        type: "asset/resource", // Para copiar arquivos de fontes
+        type: "asset/resource",
         generator: {
-          filename: 'assets/fonts/[name][hash][ext][query]', // Colocando as fontes dentro de assets/fonts/
+          filename: 'assets/fonts/[name][hash][ext][query]',
         },
       },      
     ],
@@ -60,16 +62,16 @@ module.exports = {
       chunks: ["global", "index"],
       filename: "index.html",
     }),
-    // new HtmlWebpackPlugin({
-    //   template: "./list-products.html",
-    //   chunks: ["listProducts", "global"],
-    //   filename: "list-products.html",
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: "./add-products.html",
-    //   chunks: ["addProducts", "global"],
-    //   filename: "add-products.html",
-    // }),
+    new HtmlWebpackPlugin({
+      template: "./list-products.html",
+      chunks: ["listProducts", "global"],
+      filename: "list-products.html",
+    }),
+    //new HtmlWebpackPlugin({
+      //template: "./add-products.html",
+      //chunks: ["addProducts", "global"],
+      //filename: "add-products.html",
+   // }),
   ],
   optimization: {
     minimize: true,
